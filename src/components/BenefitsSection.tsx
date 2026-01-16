@@ -8,6 +8,7 @@ import {
   Sun,
   Zap
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const benefits = [
   {
@@ -104,12 +105,22 @@ const BenefitsSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center space-y-6">
           <div className="inline-flex items-center gap-3 bg-card border border-border/50 rounded-full px-6 py-3">
             <Zap className="w-5 h-5 text-primary animate-pulse" />
             <span className="text-muted-foreground">
               Mais de <span className="text-primary font-semibold">1.000 famílias</span> já economizam com a Pulse
             </span>
+          </div>
+          
+          <div>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 glow-green"
+              onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento de energia solar.", "_blank")}
+            >
+              ⚡ Solicitar Orçamento Gratuito
+            </Button>
           </div>
         </div>
       </div>

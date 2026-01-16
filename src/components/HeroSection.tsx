@@ -76,12 +76,11 @@ const HeroSection = () => {
               ⚡ Calcular Minha Economia
             </Button>
             <Button 
-              variant="outline"
               size="lg"
-              className="border-border hover:border-primary/50 hover:bg-primary/5 text-foreground font-semibold text-lg px-8 py-6"
-              onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6"
+              onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento de energia solar.", "_blank")}
             >
-              💬 Falar com Especialista
+              📞 Solicitar Orçamento
             </Button>
           </div>
         </div>
