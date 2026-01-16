@@ -46,7 +46,7 @@ const solarRadiation: Record<string, { hsp: number; cities: string[] }> = {
   "RO": { hsp: 4.7, cities: ["Porto Velho", "Ji-Paraná", "Ariquemes"] },
   "RR": { hsp: 4.8, cities: ["Boa Vista", "Rorainópolis", "Caracaraí"] },
   "SC": { hsp: 4.4, cities: ["Florianópolis", "Joinville", "Blumenau", "Balneário Camboriú"] },
-  "SP": { hsp: 4.9, cities: ["São Paulo", "Campinas", "Santos", "Ribeirão Preto", "Sorocaba"] },
+  "SP": { hsp: 4.9, cities: ["São Paulo", "São José dos Campos", "Campinas", "Santos", "Ribeirão Preto", "Sorocaba", "Jacareí", "Taubaté", "Guaratinguetá"] },
   "SE": { hsp: 5.5, cities: ["Aracaju", "Nossa Senhora do Socorro", "Lagarto"] },
   "TO": { hsp: 5.4, cities: ["Palmas", "Araguaína", "Gurupi"] }
 };
@@ -228,20 +228,20 @@ const SolarCalculator = () => {
                 </div>
 
                 {/* Results Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in">
                     <Sun className="w-8 h-8 text-primary mx-auto mb-2" />
                     <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.potenciakWp}</div>
                     <div className="text-sm text-muted-foreground">kWp necessário</div>
                   </div>
                   
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50">
+                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                     <Zap className="w-8 h-8 text-primary mx-auto mb-2" />
                     <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.paineis}</div>
                     <div className="text-sm text-muted-foreground">painéis solares</div>
                   </div>
                   
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50">
+                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                     <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
                     <div className="text-2xl md:text-3xl font-bold text-primary">
                       R$ {parseInt(calculation?.economiaAnual || "0").toLocaleString("pt-BR")}
@@ -249,25 +249,30 @@ const SolarCalculator = () => {
                     <div className="text-sm text-muted-foreground">economia/ano</div>
                   </div>
                   
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50">
-                    <TrendingUp className="w-8 h-8 text-accent mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.retornoAnos}</div>
-                    <div className="text-sm text-muted-foreground">anos p/ retorno</div>
-                  </div>
-                  
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50">
-                    <DollarSign className="w-8 h-8 text-accent mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-foreground">
-                      ~R$ {parseInt(calculation?.custoEstimado || "0").toLocaleString("pt-BR")}
-                    </div>
-                    <div className="text-sm text-muted-foreground">investimento estimado</div>
-                  </div>
-                  
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50">
+                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
                     <Leaf className="w-8 h-8 text-primary mx-auto mb-2" />
                     <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.co2Evitado} kg</div>
                     <div className="text-sm text-muted-foreground">CO₂ evitado/ano</div>
                   </div>
+                </div>
+
+                {/* Mystery Investment Box */}
+                <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-2 border-dashed border-primary/50 rounded-2xl p-6 text-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+                  <div className="text-4xl mb-3">🤔💰❓</div>
+                  <h4 className="text-xl font-bold text-foreground mb-2">
+                    E o investimento? Quanto custa?
+                  </h4>
+                  <p className="text-muted-foreground mb-4">
+                    Para saber o valor exato do seu sistema, fale com um de nossos especialistas. 
+                    <span className="text-primary font-semibold"> Orçamento gratuito e sem compromisso!</span>
+                  </p>
+                  <Button 
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold glow-green animate-pulse"
+                    onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Fiz uma simulação no site e gostaria de saber o valor do investimento para meu sistema de " + calculation?.potenciakWp + " kWp.", "_blank")}
+                  >
+                    💬 Descobrir o Valor do Investimento
+                  </Button>
                 </div>
 
                 {/* Action Buttons */}
@@ -289,9 +294,15 @@ const SolarCalculator = () => {
                   </Button>
                 </div>
 
-                <p className="text-center text-xs text-muted-foreground">
-                  * Valores estimados. Consulte um especialista para orçamento personalizado.
-                </p>
+                {/* Disclaimer */}
+                <div className="bg-muted/30 border border-border/50 rounded-xl p-4 animate-fade-in">
+                  <p className="text-center text-sm text-muted-foreground">
+                    ⚠️ <span className="font-semibold">Atenção:</span> Esta é uma <span className="text-primary font-semibold">estimativa inicial</span> baseada em dados médios. 
+                    Os valores podem variar de acordo com as características específicas de cada instalação, 
+                    como tipo de telhado, sombreamento, orientação e outros fatores técnicos. 
+                    <span className="font-semibold"> Solicite uma análise personalizada para valores precisos.</span>
+                  </p>
+                </div>
               </div>
             )}
           </div>
