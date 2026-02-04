@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 import CitySection from "@/components/CitySection";
 import SolarCalculator from "@/components/SolarCalculator";
 import CTASection from "@/components/CTASection";
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <BenefitsSection />
+        <ProjectsCarousel />
         <CitySection />
         <SolarCalculator />
         <CTASection />
