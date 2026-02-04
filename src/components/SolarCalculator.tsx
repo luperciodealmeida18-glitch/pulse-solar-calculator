@@ -269,7 +269,7 @@ const SolarCalculator = () => {
                   <Button 
                     size="lg"
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold glow-green animate-pulse"
-                    onClick={() => window.open("https://wa.me/551298155559?text=Olá Leonardo! Fiz uma simulação no site da Pulse Energia Solar e gostaria de saber o valor do investimento para meu sistema de " + calculation?.potenciakWp + " kWp. Pode me ajudar?", "_blank")}
+                    onClick={() => window.open("https://wa.me/5512991855559?text=Olá Leonardo! Fiz uma simulação no site da Pulse Energia Solar e gostaria de saber o valor do investimento para meu sistema de " + calculation?.potenciakWp + " kWp. Pode me ajudar?", "_blank")}
                   >
                     💬 Descobrir o Valor do Investimento
                   </Button>
@@ -280,7 +280,7 @@ const SolarCalculator = () => {
                   <Button 
                     size="lg"
                     className="flex-1 h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-bold glow-green"
-                    onClick={() => window.open("https://wa.me/551298155559?text=Olá Leonardo! Fiz uma simulação no site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?", "_blank")}
+                    onClick={() => window.open("https://wa.me/5512991855559?text=Olá Leonardo! Fiz uma simulação no site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?", "_blank")}
                   >
                     💬 Solicitar Orçamento Grátis
                   </Button>

@@ -6,7 +6,7 @@ const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const whatsappMessage = "Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de tirar algumas dúvidas sobre energia fotovoltaica. Pode me ajudar?";
-  const whatsappNumber = "551298155559";
+  const whatsappNumber = "5512991855559";
 
   useEffect(() => {
     // Show the button after a short delay
