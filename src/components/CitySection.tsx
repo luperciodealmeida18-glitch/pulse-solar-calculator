@@ -69,7 +69,7 @@ const CitySection = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 glow-green animate-slide-up"
             style={{ animationDelay: "0.4s" }}
-            onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Sou de São José dos Campos e gostaria de um orçamento.", "_blank")}
+            onClick={() => window.open("https://wa.me/551298155559?text=Olá Leonardo! Sou de São José dos Campos e vi o site da Pulse Energia Solar. Gostaria de solicitar um orçamento. Pode me ajudar?", "_blank")}
           >
             📞 Solicitar Orçamento em SJC
           </Button>
