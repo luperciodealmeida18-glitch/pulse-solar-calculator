@@ -1,7 +1,11 @@
-import { Phone, MessageCircle, Clock, Shield } from "lucide-react";
+import { Phone, MessageCircle, Clock, Shield, Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
+  const whatsappMessage = "Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?";
+  const whatsappNumber = "551298155559";
+  const phoneNumber = "1298155559";
+
   return (
     <section id="contato" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
@@ -19,7 +23,7 @@ const CTASection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Fale agora com um especialista da <span className="text-primary font-semibold">Pulse Energia Solar</span> e 
+              Fale agora com <span className="text-primary font-semibold">Leonardo</span>, nosso técnico especialista da <span className="text-primary font-semibold">Pulse Energia Solar</span>, e 
               receba um orçamento personalizado para sua residência ou empresa.
             </p>
 
@@ -44,7 +48,7 @@ const CTASection = () => {
               <Button 
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 glow-green animate-pulse"
-                onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para energia solar.", "_blank")}
+                onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank")}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Solicitar Orçamento via WhatsApp
@@ -53,16 +57,38 @@ const CTASection = () => {
                 variant="outline"
                 size="lg"
                 className="border-border hover:border-primary/50 hover:bg-primary/5 text-foreground font-semibold text-lg px-8 py-6"
-                onClick={() => window.open("tel:+5511999999999", "_blank")}
+                onClick={() => window.open(`tel:+55${phoneNumber}`, "_blank")}
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Ligar Agora
               </Button>
             </div>
 
-            <p className="mt-8 text-sm text-muted-foreground">
-              💡 Atendimento especial para <span className="text-primary font-semibold">São José dos Campos</span> e região
-            </p>
+            {/* Contact Info */}
+            <div className="mt-10 pt-8 border-t border-border/50">
+              <p className="text-sm text-muted-foreground mb-4">
+                💡 Atendimento especial para <span className="text-primary font-semibold">São José dos Campos</span> e região
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-6">
+                <a 
+                  href="https://instagram.com/pulseenegiaeconforto" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span>@pulseenegiaeconforto</span>
+                </a>
+                <a 
+                  href="mailto:Leonardo@pulseenegiaeconfoto.com"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Leonardo@pulseenegiaeconfoto.com</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

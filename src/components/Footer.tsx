@@ -22,19 +22,23 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href="https://instagram.com/pulseenegiaeconforto" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
               >
                 <Instagram className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a 
-                href="#" 
+                href="https://wa.me/551298155559?text=Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de tirar algumas dúvidas. Pode me ajudar?" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
               >
                 <Facebook className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a 
-                href="#" 
+                href="mailto:Leonardo@pulseenegiaeconfoto.com" 
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
               >
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -75,15 +79,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">São Paulo, SP - Brasil</span>
+                <span className="text-sm">São José dos Campos, SP</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">(11) 99999-9999</span>
+                <span className="text-sm">(12) 98155-559</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">contato@pulseenergia.com.br</span>
+                <span className="text-sm">Leonardo@pulseenegiaeconfoto.com</span>
+              </li>
+              <li className="flex items-center gap-3 text-muted-foreground">
+                <Instagram className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm">@pulseenegiaeconforto</span>
               </li>
             </ul>
           </div>

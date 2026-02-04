@@ -78,7 +78,7 @@ const HeroSection = () => {
             <Button 
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6"
-              onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento de energia solar.", "_blank")}
+              onClick={() => window.open("https://wa.me/551298155559?text=Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?", "_blank")}
             >
               📞 Solicitar Orçamento
             </Button>

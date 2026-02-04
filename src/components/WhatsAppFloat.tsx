@@ -5,6 +5,9 @@ const WhatsAppFloat = () => {
   const [showBalloon, setShowBalloon] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  const whatsappMessage = "Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de tirar algumas dúvidas sobre energia fotovoltaica. Pode me ajudar?";
+  const whatsappNumber = "551298155559";
+
   useEffect(() => {
     // Show the button after a short delay
     const timer = setTimeout(() => {
@@ -24,7 +27,7 @@ const WhatsAppFloat = () => {
 
   const handleClick = () => {
     window.open(
-      "https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento de energia solar.",
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
       "_blank"
     );
   };
@@ -49,14 +52,18 @@ const WhatsAppFloat = () => {
           </button>
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-lg">👋</span>
+              <div className="relative">
+                <span className="text-lg">👨‍🔧</span>
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-card animate-pulse" />
+              </div>
             </div>
             <div>
-              <p className="text-sm font-semibold text-foreground mb-1">
-                Fale com um especialista!
+              <p className="text-sm font-semibold text-foreground mb-1 flex items-center gap-2">
+                Leonardo está online
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               </p>
               <p className="text-xs text-muted-foreground">
-                Tire suas dúvidas e solicite um orçamento personalizado agora mesmo.
+                Técnico especialista pronto para atender você! Tire suas dúvidas agora mesmo ☀️
               </p>
             </div>
           </div>
