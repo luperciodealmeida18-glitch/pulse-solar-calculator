@@ -30,7 +30,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a 
-                href="https://wa.me/551298155559?text=Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de tirar algumas dúvidas. Pode me ajudar?" 
+                href="https://wa.me/5512991855559?text=Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de tirar algumas dúvidas. Pode me ajudar?" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
@@ -83,7 +83,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">(12) 98155-559</span>
+                <span className="text-sm">(12) 99185-5559</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />

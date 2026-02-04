@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   const whatsappMessage = "Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?";
-  const whatsappNumber = "551298155559";
-  const phoneNumber = "1298155559";
+  const whatsappNumber = "5512991855559";
+  const phoneNumber = "12991855559";
 
   return (
     <section id="contato" className="py-20 md:py-32 relative overflow-hidden">

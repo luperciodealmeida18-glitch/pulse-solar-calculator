@@ -185,7 +185,7 @@ const ProjectsCarousel = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 glow-green"
-            onClick={() => window.open("https://wa.me/551298155559?text=Olá Leonardo! Vi os projetos no site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?", "_blank")}
+            onClick={() => window.open("https://wa.me/5512991855559?text=Olá Leonardo! Vi os projetos no site da Pulse Energia Solar e gostaria de solicitar um orçamento. Pode me ajudar?", "_blank")}
           >
             ☀️ Quero Meu Projeto Solar
           </Button>
