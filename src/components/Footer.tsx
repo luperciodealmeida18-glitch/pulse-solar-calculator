@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a 
-                href="https://instagram.com/pulseenegiaeconforto" 
+                href="https://www.instagram.com/pulseenergiaeconforto?igsh=Y29sMWJ3Nmg0eXV3" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
