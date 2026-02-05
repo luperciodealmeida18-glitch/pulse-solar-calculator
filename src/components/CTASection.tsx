@@ -72,20 +72,20 @@ const CTASection = () => {
               
               <div className="flex flex-wrap justify-center gap-6">
                 <a 
-                  href="https://instagram.com/pulseenegiaeconforto" 
+                  href="https://www.instagram.com/pulseenergiaeconforto?igsh=Y29sMWJ3Nmg0eXV3" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Instagram className="w-5 h-5" />
-                  <span>@pulseenegiaeconforto</span>
+                  <span>@pulseenergiaeconforto</span>
                 </a>
                 <a 
-                  href="mailto:Leonardo@pulseenegiaeconfoto.com"
+                  href="mailto:leonardo@pulseenegiaeconfrto.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>Leonardo@pulseenegiaeconfoto.com</span>
+                  <span>leonardo@pulseenegiaeconfrto.com</span>
                 </a>
               </div>
             </div>

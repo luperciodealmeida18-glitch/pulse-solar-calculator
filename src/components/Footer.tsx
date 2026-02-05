@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a 
-                href="https://instagram.com/pulseenegiaeconforto" 
+                href="https://www.instagram.com/pulseenergiaeconforto?igsh=Y29sMWJ3Nmg0eXV3" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
@@ -38,7 +38,7 @@ const Footer = () => {
                 <Facebook className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a 
-                href="mailto:Leonardo@pulseenegiaeconfoto.com" 
+                href="mailto:leonardo@pulseenegiaeconfrto.com"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
               >
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -87,11 +87,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">Leonardo@pulseenegiaeconfoto.com</span>
+                <span className="text-sm">leonardo@pulseenegiaeconfrto.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Instagram className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">@pulseenegiaeconforto</span>
+                <span className="text-sm">@pulseenergiaeconforto</span>
               </li>
             </ul>
           </div>
