@@ -87,11 +87,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">Leonardo@pulseenegiaeconfoto.com</span>
+                <span className="text-sm">leonardo@pulseenegiaeconfrto.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Instagram className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm">@pulseenegiaeconforto</span>
+                <span className="text-sm">@pulseenergiaeconforto</span>
               </li>
             </ul>
           </div>
