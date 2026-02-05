@@ -38,7 +38,7 @@ const Footer = () => {
                 <Facebook className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a 
-                href="mailto:Leonardo@pulseenegiaeconfoto.com" 
+                href="mailto:leonardo@pulseenegiaeconfrto.com"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors group"
               >
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
