@@ -6,61 +6,64 @@
 
 @layer base {
   :root {
-    --background: 210 20% 8%;
+    /* Cores baseadas na logo Pulse - Azul petróleo mais claro */
+    --background: 195 45% 18%;
     --foreground: 0 0% 98%;
 
-    --card: 210 18% 12%;
+    --card: 195 40% 22%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 210 18% 12%;
+    --popover: 195 40% 22%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 142 71% 45%;
+    /* Verde vibrante da logo */
+    --primary: 145 76% 46%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 62% 30%;
+    /* Azul petróleo da logo */
+    --secondary: 195 45% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 15% 20%;
-    --muted-foreground: 210 10% 60%;
+    --muted: 195 30% 28%;
+    --muted-foreground: 195 20% 70%;
 
-    --accent: 190 62% 30%;
+    --accent: 195 45% 25%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 15% 20%;
-    --input: 210 15% 20%;
-    --ring: 142 71% 45%;
+    --border: 195 30% 30%;
+    --input: 195 30% 28%;
+    --ring: 145 76% 46%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 210 18% 10%;
+    --sidebar-background: 195 45% 16%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary: 145 76% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 190 62% 30%;
+    --sidebar-accent: 195 45% 25%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 210 15% 20%;
-    --sidebar-ring: 142 71% 45%;
+    --sidebar-border: 195 30% 30%;
+    --sidebar-ring: 145 76% 46%;
 
-    /* Custom colors for Pulse */
-    --pulse-green: 142 71% 45%;
-    --pulse-green-light: 142 71% 55%;
-    --pulse-teal: 190 62% 30%;
-    --pulse-teal-light: 190 55% 40%;
-    --pulse-dark: 210 20% 8%;
-    --pulse-card: 210 18% 12%;
+    /* Custom colors for Pulse - baseado na logo */
+    --pulse-green: 145 76% 46%;
+    --pulse-green-light: 145 76% 55%;
+    --pulse-teal: 195 45% 25%;
+    --pulse-teal-light: 195 40% 35%;
+    --pulse-dark: 195 45% 18%;
+    --pulse-card: 195 40% 22%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(190 62% 30%) 0%, hsl(142 71% 45%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(210 18% 14%) 0%, hsl(210 18% 10%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(142 71% 45% / 0.15) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(195 45% 25%) 0%, hsl(145 76% 46%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(195 40% 24%) 0%, hsl(195 40% 20%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(145 76% 46% / 0.15) 0%, transparent 70%);
   }
 
   .dark {
-    --background: 210 20% 8%;
+    --background: 195 45% 18%;
     --foreground: 0 0% 98%;
   }
 }
