@@ -19,6 +19,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { motion } from "framer-motion";
+import { AnimatedSection, staggerContainer, counterVariants } from "./AnimatedSection";
 
 // Radiação solar média por estado (HSP - Horas de Sol Pico)
 const solarRadiation: Record<string, { hsp: number; cities: string[] }> = {
@@ -66,23 +68,21 @@ const SolarCalculator = () => {
   const calculation = useMemo(() => {
     if (!consumo || !estado) return null;
 
-    const E = parseFloat(consumo); // kWh
+    const E = parseFloat(consumo);
     const HSP = solarRadiation[estado]?.hsp || 5.0;
-    const efficiency = 0.80; // 80% eficiência
+    const efficiency = 0.80;
 
-    // P = E / (HSP × 30 × η)
     const potenciakWp = E / (HSP * 30 * efficiency);
     
-    // Estimativas
-    const custoMedioKwp = 4500; // R$ por kWp instalado
+    const custoMedioKwp = 4500;
     const custoTotal = potenciakWp * custoMedioKwp;
-    const economiaAnual = E * 12 * 0.75; // Média de R$0.75 por kWh
+    const economiaAnual = E * 12 * 0.75;
     const retornoAnos = custoTotal / economiaAnual;
-    const co2Evitado = E * 12 * 0.084; // kg CO2 por kWh
+    const co2Evitado = E * 12 * 0.084;
 
     return {
       potenciakWp: potenciakWp.toFixed(2),
-      paineis: Math.ceil(potenciakWp / 0.55), // ~550W por painel
+      paineis: Math.ceil(potenciakWp / 0.55),
       custoEstimado: custoTotal.toFixed(0),
       economiaAnual: economiaAnual.toFixed(0),
       retornoAnos: retornoAnos.toFixed(1),
@@ -110,7 +110,7 @@ const SolarCalculator = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <AnimatedSection className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-6">
             <Calculator className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Calculadora Solar</span>
@@ -125,11 +125,15 @@ const SolarCalculator = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Insira seus dados e veja em segundos o tamanho do sistema ideal e a economia projetada ☀️
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Calculator Card */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-card border border-border/50 rounded-3xl p-6 md:p-10 shadow-2xl">
+        <AnimatedSection className="max-w-4xl mx-auto">
+          <motion.div
+            whileHover={{ y: -3 }}
+            transition={{ duration: 0.3 }}
+            className="bg-card border border-border/50 rounded-3xl p-6 md:p-10 shadow-2xl"
+          >
             
             {!showResult ? (
               <div className="space-y-8">
@@ -202,23 +206,35 @@ const SolarCalculator = () => {
                 </div>
 
                 {/* Calculate Button */}
-                <Button 
-                  onClick={handleCalculate}
-                  disabled={!consumo || !estado}
-                  size="lg"
-                  className="w-full h-16 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg glow-green disabled:opacity-50"
-                >
-                  <Sun className="w-6 h-6 mr-3" />
-                  Calcular Minha Economia ☀️
-                </Button>
+                <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
+                  <Button 
+                    onClick={handleCalculate}
+                    disabled={!consumo || !estado}
+                    size="lg"
+                    className="w-full h-16 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg glow-green disabled:opacity-50"
+                  >
+                    <Sun className="w-6 h-6 mr-3" />
+                    Calcular Minha Economia ☀️
+                  </Button>
+                </motion.div>
               </div>
             ) : (
-              <div className="space-y-8 animate-scale-in">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-8"
+              >
                 {/* Result Header */}
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                    className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4"
+                  >
                     <CheckCircle2 className="w-8 h-8 text-primary" />
-                  </div>
+                  </motion.div>
                   <h3 className="font-display text-2xl font-bold text-foreground mb-2">
                     Resultado da sua simulação! 🎉
                   </h3>
@@ -228,36 +244,39 @@ const SolarCalculator = () => {
                 </div>
 
                 {/* Results Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in">
-                    <Sun className="w-8 h-8 text-primary mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.potenciakWp}</div>
-                    <div className="text-sm text-muted-foreground">kWp necessário</div>
-                  </div>
-                  
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                    <Zap className="w-8 h-8 text-primary mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.paineis}</div>
-                    <div className="text-sm text-muted-foreground">painéis solares</div>
-                  </div>
-                  
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                    <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-primary">
-                      R$ {parseInt(calculation?.economiaAnual || "0").toLocaleString("pt-BR")}
-                    </div>
-                    <div className="text-sm text-muted-foreground">economia/ano</div>
-                  </div>
-                  
-                  <div className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                    <Leaf className="w-8 h-8 text-primary mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-foreground">{calculation?.co2Evitado} kg</div>
-                    <div className="text-sm text-muted-foreground">CO₂ evitado/ano</div>
-                  </div>
-                </div>
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={staggerContainer}
+                  className="grid grid-cols-2 md:grid-cols-4 gap-4"
+                >
+                  {[
+                    { icon: Sun, value: calculation?.potenciakWp, label: "kWp necessário" },
+                    { icon: Zap, value: calculation?.paineis, label: "painéis solares" },
+                    { icon: DollarSign, value: `R$ ${parseInt(calculation?.economiaAnual || "0").toLocaleString("pt-BR")}`, label: "economia/ano", highlight: true },
+                    { icon: Leaf, value: `${calculation?.co2Evitado} kg`, label: "CO₂ evitado/ano" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      variants={counterVariants}
+                      className="bg-muted/50 rounded-2xl p-5 text-center border border-border/50"
+                    >
+                      <item.icon className="w-8 h-8 text-primary mx-auto mb-2" />
+                      <div className={`text-2xl md:text-3xl font-bold ${item.highlight ? "text-primary" : "text-foreground"}`}>
+                        {item.value}
+                      </div>
+                      <div className="text-sm text-muted-foreground">{item.label}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
 
                 {/* Mystery Investment Box */}
-                <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-2 border-dashed border-primary/50 rounded-2xl p-6 text-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-2 border-dashed border-primary/50 rounded-2xl p-6 text-center"
+                >
                   <div className="text-4xl mb-3">🤔💰❓</div>
                   <h4 className="text-xl font-bold text-foreground mb-2">
                     E o investimento? Quanto custa?
@@ -273,7 +292,7 @@ const SolarCalculator = () => {
                   >
                     💬 Descobrir o Valor do Investimento
                   </Button>
-                </div>
+                </motion.div>
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -295,7 +314,7 @@ const SolarCalculator = () => {
                 </div>
 
                 {/* Disclaimer */}
-                <div className="bg-muted/30 border border-border/50 rounded-xl p-4 animate-fade-in">
+                <div className="bg-muted/30 border border-border/50 rounded-xl p-4">
                   <p className="text-center text-sm text-muted-foreground">
                     ⚠️ <span className="font-semibold">Atenção:</span> Esta é uma <span className="text-primary font-semibold">estimativa inicial</span> baseada em dados médios. 
                     Os valores podem variar de acordo com as características específicas de cada instalação, 
@@ -303,10 +322,10 @@ const SolarCalculator = () => {
                     <span className="font-semibold"> Solicite uma análise personalizada para valores precisos.</span>
                   </p>
                 </div>
-              </div>
+              </motion.div>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   );
