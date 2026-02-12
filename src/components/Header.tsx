@@ -43,6 +43,12 @@ const Header = () => {
               Benefícios
             </button>
             <button 
+              onClick={() => scrollToSection("kits")}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Kits
+            </button>
+            <button 
               onClick={() => scrollToSection("calculadora")}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
@@ -94,6 +100,12 @@ const Header = () => {
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
               >
                 Benefícios
+              </button>
+              <button 
+                onClick={() => scrollToSection("kits")}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                Kits
               </button>
               <button 
                 onClick={() => scrollToSection("calculadora")}
