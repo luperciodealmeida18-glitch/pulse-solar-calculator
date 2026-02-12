@@ -1,4 +1,4 @@
-import { Sun, Zap, Cable, Plug, Package, ShieldCheck, MessageCircle } from "lucide-react";
+import { Sun, Zap, Cable, Plug, Package, ShieldCheck, MessageCircle, MapPin } from "lucide-react";
 import kitSolarHero from "@/assets/kit-solar-hero.png";
 import inversorSaj from "@/assets/inversor-saj.png";
 import painelSunova from "@/assets/painel-sunova.png";
@@ -155,6 +155,38 @@ const SolarKitsSection = () => {
                 Kit Energia Solar On-Grid 500kWh/Mês — 3,72kWp — 6× Painel Bifacial Sunova 620W — Inversor SAJ 3kW 220V 1MPPT
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Produção Estimada por Região */}
+        <div className="mt-20">
+          <div className="text-center mb-10">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Produção Estimada por <span className="text-gradient">Região</span>
+            </h3>
+            <p className="text-muted-foreground text-sm">
+              Valores médios mensais de geração de energia
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { region: "Sul", value: 468 },
+              { region: "Sudeste", value: 502 },
+              { region: "Centro-Oeste", value: 580 },
+              { region: "Norte", value: 502 },
+              { region: "Nordeste", value: 624 },
+            ].map((item) => (
+              <div
+                key={item.region}
+                className="relative group p-5 rounded-2xl bg-card/80 border border-border/40 hover:border-primary/40 transition-all duration-300 text-center"
+              >
+                <MapPin className="w-4 h-4 text-primary mx-auto mb-2" />
+                <p className="text-sm font-semibold text-foreground mb-1">{item.region}</p>
+                <p className="text-3xl font-bold text-primary font-display">{item.value}</p>
+                <p className="text-xs text-muted-foreground mt-1">kWh/mês</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
