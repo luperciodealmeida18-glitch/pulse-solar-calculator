@@ -85,7 +85,7 @@ const SolarKitsSection = () => {
                 </p>
                 <div className="flex items-baseline justify-center gap-2">
                   <span className="text-3xl md:text-4xl font-bold text-primary font-display">
-                    R$ 6.046,43
+                    R$ 10.046,43
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
