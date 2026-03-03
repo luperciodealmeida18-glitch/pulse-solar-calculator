@@ -97,7 +97,8 @@ const HeroSection = () => {
                   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5 } },
                 }}
                 whileHover={{ y: -5, borderColor: "hsl(var(--primary) / 0.5)" }}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 transition-all duration-300 group"
+                onClick={() => window.open("https://wa.me/5512991855559?text=Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de saber mais sobre: " + encodeURIComponent(stat.label) + ". Pode me ajudar?", "_blank")}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 transition-all duration-300 group cursor-pointer"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <div className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</div>
