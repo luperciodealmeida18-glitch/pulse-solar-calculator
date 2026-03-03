@@ -62,7 +62,8 @@ const CitySection = () => {
                 key={i}
                 variants={staggerItem}
                 whileHover={{ x: 6 }}
-                className="flex items-center gap-3 bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-4"
+                onClick={() => window.open("https://wa.me/5512991855559?text=Olá Leonardo! Vi o site da Pulse Energia Solar e gostaria de saber mais sobre: " + encodeURIComponent(feature.label) + ". Pode me ajudar?", "_blank")}
+                className="flex items-center gap-3 bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-4 cursor-pointer hover:border-primary/50 transition-colors"
               >
                 <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
                   <span className="text-lg">{feature.emoji}</span>
